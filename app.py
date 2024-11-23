@@ -7,9 +7,11 @@ import tempfile
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-UPLOAD_FOLDER = 'uploads'
+# Create uploads directory in the same directory as the script
+UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'uploads')
 ALLOWED_EXTENSIONS = {'pdf', 'docx', 'txt', 'html', 'epub', 'md'}
 
+# Ensure upload folder exists
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
