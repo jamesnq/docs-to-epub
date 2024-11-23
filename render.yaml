@@ -2,11 +2,17 @@ services:
   - type: web
     name: doc-to-pub
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      curl -O https://download.calibre-ebook.com/linux-installer.sh
+      sh linux-installer.sh
+      export PATH=$PATH:/opt/calibre
+      pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.0
+      - key: PATH
+        value: /opt/calibre:$PATH
     disk:
       name: doc-storage
       mountPath: /opt/render/project/src/storage
