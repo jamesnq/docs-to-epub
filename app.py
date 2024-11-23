@@ -7,6 +7,12 @@ import tempfile
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+# Set pandoc path
+home = os.path.expanduser("~")
+pandoc_path = os.path.join(home, '.local', 'bin', 'pandoc')
+if os.path.exists(pandoc_path):
+    pypandoc.configure(pandoc_path=pandoc_path)
+
 # Create uploads directory in the same directory as the script
 UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'uploads')
 ALLOWED_EXTENSIONS = {'pdf', 'docx', 'txt', 'html', 'epub', 'md'}
