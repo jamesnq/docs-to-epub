@@ -74,8 +74,8 @@ Alternatively, you can use Calibre on your local machine to convert EPUB to MOBI
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/jamesnq/docs-to-pub.git
-   cd docs-to-pub
+   git clone https://github.com/jamesnq/docs-to-epub.git
+   cd docs-to-epub
    ```
 
 2. Install dependencies:
@@ -92,7 +92,7 @@ Alternatively, you can use Calibre on your local machine to convert EPUB to MOBI
 
 ## Contributing
 
-Feel free to open issues or submit pull requests on GitHub. Some areas for improvement:
+Feel free to open issues or submit pull requests on [GitHub](https://github.com/jamesnq/docs-to-epub). Some areas for improvement:
 
 - Add support for more input formats
 - Improve conversion quality

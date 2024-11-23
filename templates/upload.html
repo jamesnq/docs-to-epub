@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document to EPUB Converter</title>
+    <meta name="description" content="Free online converter for PDF, DOCX, and TXT files to EPUB format. Perfect for Kindle and other e-readers.">
+    <title>Kindle Converter - Convert Documents to EPUB</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,11 +70,24 @@
             border-radius: 4px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Document to EPUB Converter</h1>
+        <h1>Kindle Converter</h1>
         
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -100,6 +114,12 @@
             <p style="text-align: center; margin-top: 20px;">
                 Output format: EPUB (.epub)<br>
                 <small>Compatible with Kindle and other e-readers</small>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>
+                Open source on <a href="https://github.com/jamesnq/docs-to-epub" target="_blank" rel="noopener">GitHub</a>
             </p>
         </div>
     </div>
