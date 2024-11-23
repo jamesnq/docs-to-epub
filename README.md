@@ -2,13 +2,21 @@
 
 A Python application that converts various document formats (PDF, DOCX, TXT, etc.) to Kindle-compatible .pub format.
 
-## Prerequisites
+## Online Version
+
+Try it online at: [https://docs-to-pub.onrender.com](https://docs-to-pub.onrender.com)
+
+Simply upload your document and get a Kindle-compatible .pub file in return. The online version supports all the same formats as the local version.
+
+## Local Installation
+
+### Prerequisites
 
 - Python 3.7 or higher
 - Pandoc (will be automatically installed if missing)
 - Calibre (must be installed on your system)
 
-## Installation
+### Installation
 
 1. Install Calibre from: https://calibre-ebook.com/download
 2. Install Python dependencies:
@@ -16,12 +24,12 @@ A Python application that converts various document formats (PDF, DOCX, TXT, etc
    pip install -r requirements.txt
    ```
 
-## Directory Structure
+### Directory Structure
 
 - `input_books/`: Place your source documents here
 - `output_books/`: Converted .pub files will be saved here
 
-## Usage
+### Usage
 
 1. Place your documents in the `input_books` directory
 
@@ -72,3 +80,11 @@ If no output filename is specified, the converter will generate one automaticall
 - Images and formatting will be preserved where possible
 - Large files may take longer to process
 - Each conversion creates a unique file with a timestamp to prevent overwriting
+
+## Self-Hosting
+
+The application can be self-hosted on any platform that supports Python. The repository includes configuration for Render.com deployment.
+
+## Contributing
+
+Feel free to open issues or submit pull requests on GitHub.
