@@ -4,7 +4,7 @@ A web application that converts various document formats (PDF, DOCX, TXT) to EPU
 
 ## Online Version
 
-Try it online at: [https://docs-to-pub.onrender.com](https://docs-to-pub.onrender.com)
+Try it online at: [https://kindleconverter.onrender.com](https://kindleconverter.onrender.com)
 
 Simply upload your document and get an EPUB file in return. The online version supports PDF, DOCX, and TXT files.
 
