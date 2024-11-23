@@ -1,90 +1,105 @@
-# Document to Kindle (.pub) Converter
+# Document to EPUB Converter
 
-A Python application that converts various document formats (PDF, DOCX, TXT, etc.) to Kindle-compatible .pub format.
+A web application that converts various document formats (PDF, DOCX, TXT) to EPUB format, suitable for e-readers including Kindle devices.
 
 ## Online Version
 
 Try it online at: [https://docs-to-pub.onrender.com](https://docs-to-pub.onrender.com)
 
-Simply upload your document and get a Kindle-compatible .pub file in return. The online version supports all the same formats as the local version.
+Simply upload your document and get an EPUB file in return. The online version supports PDF, DOCX, and TXT files.
 
-## Local Installation
+## Features
+
+- Easy-to-use web interface
+- Supports multiple input formats:
+  * PDF (.pdf)
+  * Microsoft Word (.docx)
+  * Text files (.txt)
+- Converts to EPUB format
+- Preserves document structure:
+  * Maintains paragraphs from DOCX files
+  * Preserves page breaks from PDF files
+  * Formats plain text for readability
+- Clean, modern interface
+- Instant download of converted files
+- No installation required
+
+## File Format Support
+
+### Input Formats
+- PDF (.pdf)
+  * Extracts text content
+  * Maintains page structure
+  * Preserves basic formatting
+
+- Microsoft Word (.docx)
+  * Preserves paragraphs
+  * Maintains text content
+  * Converts basic formatting
+
+- Text (.txt)
+  * Converts plain text
+  * Adds basic formatting
+  * Creates readable e-book structure
+
+### Output Format
+- EPUB (.epub)
+  * Universal e-book format
+  * Compatible with most e-readers
+  * Works with Kindle devices (through Amazon's conversion)
+  * Maintains document structure
+  * Includes table of contents
+
+## Using with Kindle
+
+While this tool outputs EPUB files, you can easily use them with your Kindle:
+
+1. Send the EPUB file to your Kindle email address
+2. Amazon will automatically convert it to Kindle format
+3. The converted book will appear in your Kindle library
+
+Alternatively, you can use Calibre on your local machine to convert EPUB to MOBI/AZW3 format.
+
+## Local Development
 
 ### Prerequisites
 
 - Python 3.7 or higher
-- Pandoc (will be automatically installed if missing)
-- Calibre (must be installed on your system)
+- Required Python packages (install via pip):
+  ```
+  pip install -r requirements.txt
+  ```
 
-### Installation
+### Running Locally
 
-1. Install Calibre from: https://calibre-ebook.com/download
-2. Install Python dependencies:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jamesnq/docs-to-pub.git
+   cd docs-to-pub
    ```
+
+2. Install dependencies:
+   ```bash
    pip install -r requirements.txt
    ```
 
-### Directory Structure
-
-- `input_books/`: Place your source documents here
-- `output_books/`: Converted .pub files will be saved here
-
-### Usage
-
-1. Place your documents in the `input_books` directory
-
-2. Start the converter in one of these ways:
-
-   a. Interactive Mode (recommended):
+3. Run the application:
    ```bash
-   python doc_converter.py
-   ```
-   or
-   ```bash
-   python doc_converter.py -i
-   ```
-   This will show a menu where you can:
-   - Select a file by number to convert it
-   - Press 'r' to refresh the file list
-   - Press 'q' to quit
-
-   b. List available files:
-   ```bash
-   python doc_converter.py list
+   python app.py
    ```
 
-   c. Convert a specific file:
-   ```bash
-   python doc_converter.py filename.pdf
-   ```
-   or
-   ```bash
-   python doc_converter.py filename.pdf output.pub
-   ```
-
-If no output filename is specified, the converter will generate one automatically with a timestamp.
-
-## Supported Input Formats
-
-- PDF (.pdf)
-- Microsoft Word (.docx, .doc)
-- Text files (.txt)
-- HTML (.html, .htm)
-- ePub (.epub)
-- Markdown (.md, .markdown)
-- And more (see Pandoc documentation for full list)
-
-## Notes
-
-- The output will be in .pub format, compatible with Kindle devices
-- Images and formatting will be preserved where possible
-- Large files may take longer to process
-- Each conversion creates a unique file with a timestamp to prevent overwriting
-
-## Self-Hosting
-
-The application can be self-hosted on any platform that supports Python. The repository includes configuration for Render.com deployment.
+4. Open your browser and visit `http://localhost:5000`
 
 ## Contributing
 
-Feel free to open issues or submit pull requests on GitHub.
+Feel free to open issues or submit pull requests on GitHub. Some areas for improvement:
+
+- Add support for more input formats
+- Improve conversion quality
+- Enhance formatting preservation
+- Add batch conversion capabilities
+- Implement more styling options
+
+## License
+
+This project is open source and available under the MIT License.
