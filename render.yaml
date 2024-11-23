@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: doc-to-pub
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+    disk:
+      name: doc-storage
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1
